@@ -12,7 +12,7 @@ bool is_password_valid(std::string& line)
     ss >> min_max >> ch >> password;
 
     //break data in stringstream up into appropriate type(s) / remove remaining rubbish chars : & -
-    size_t hyphen_index = min_max.find('-'); //size t here as .find() returns the index of - in string
+    size_t hyphen_index{min_max.find('-')}; //size t here as .find() returns the index of - in string
     int min{std::stoi(min_max.substr(0, hyphen_index))}; //start at index 0 in min_max string and stop at - index
     int max{std::stoi(min_max.substr(hyphen_index + 1))}; //no length is specified here as string ends after - + 1
     char must_contain{ch[0]}; //only 1 char is ever required, and it's always at the first index in the ch string(s)
