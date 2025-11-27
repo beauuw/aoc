@@ -29,7 +29,7 @@ bool is_password_valid(std::string& line)
 int read_input_data(const std::string& filename)
 {
     std::ifstream input_file{};
-    input_file.open("input.txt");
+    input_file.open(filename);
     if(!input_file){
         std::cerr << "no such file" << std::endl;
     }
